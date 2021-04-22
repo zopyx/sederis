@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <style type="text/css">
+
+            @page {
+                size: a4;
+                font-family: Arial;
+            }
+
+            body {
+                font-family: Arial;
+
+            }
+        
+            #grid-container {
+                display: grid;
+                grid-template-columns: repeat(3, 3fr);
+                grid-template-rows: repeat(3, 3fr);
+                width: 50%;
+                height: 50%;
+            }
+
+            #grid-container div {
+                border: 1px solid grey;
+                display: grid;
+            }   
+
+            .grid-top-left {
+                justify-content: left;
+                align-items: top;
+            }
+            .grid-top-center {
+                justify-content: center;
+                align-items: top;
+            }
+            .grid-top-right {
+                justify-content: right;
+                align-items: top;
+            }
+
+            .grid-middle-left {
+                justify-content: left;
+                align-items: center;
+            }
+            .grid-middle-center {
+                justify-content: center;
+                align-items: center;
+            }
+            .grid-middle-right {
+                justify-content: right;
+                align-items: center;
+            }
+            .grid-bottom-left {
+                justify-content: left;
+                align-items: end;
+            }
+            .grid-bottom-center {
+                justify-content: center;
+                align-items: end;
+            }
+            .grid-bottom-right {
+                justify-content: right;
+                align-items: end;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div id="grid-container">
+            <div class="grid-top-left">grid-top-left</div>
+            <div class="grid-top-center">grid-top-center</div>
+            <div class="grid-top-right">grid-top-right</div>
+            <div class="grid-middle-left">grid-middle-left</div>
+            <div class="grid-middle-center">grid-middle-center</div>
+            <div class="grid-middle-right">grid-middle-right</div>
+            <div class="grid-bottom-left">grid-bottom-left</div>
+            <div class="grid-bottom-center">grid-bottom-center</div>
+            <div class="grid-bottom-right">grid-bottom-right</div>
+
+        </div>
+    </body>
+</html>
+
