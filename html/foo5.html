@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style type="text/css">
+
+            @page {
+                size: A4;
+                margin: 1cm;
+                margin-bottom: 20mm;
+            }
+
+            #container {
+                column-count: 2;
+                column-gap: 20mm;
+                text-align: justify;
+            }   
+
+            img {
+                width: 100%;
+            }
+
+            #footer {
+                position: running(footer);
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #footer-left {
+                text-align: left;                
+                color: blue;
+                font-size: 1.2em;
+            }
+
+            #footer-right {
+                text-align: right;                
+                color: red;
+                font-size: 1.1em;
+            }
+
+            @page {
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+        <div id="footer">
+            <div id="footer-left">
+                Footer
+                <br/>
+                LEFT
+            </div>
+            <div id="footer-right">
+                Footer
+                <br/>
+                right
+            </div>
+        </div>
+
+        <ol style="grid-auto-flow: row; width: 50%;display: grid; grid-template-columns: repeat(2, 1fr)">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </ol>
+
+
+
+    </body>
+</html>
+
