@@ -5,7 +5,6 @@
 
 body {
     font-family: Arial;
-
 }
 
 #grid-container {
@@ -19,16 +18,18 @@ body {
 #grid-container div {
     border: 1px solid grey;
     display: grid;
-}   
+}
 
 .grid-top-left {
     justify-content: left;
     align-items: top;
 }
+
 .grid-top-center {
     justify-content: center;
     align-items: top;
 }
+
 .grid-top-right {
     justify-content: right;
     align-items: top;
@@ -38,39 +39,84 @@ body {
     justify-content: left;
     align-items: center;
 }
+
 .grid-middle-center {
     justify-content: center;
     align-items: center;
 }
+
 .grid-middle-right {
     justify-content: right;
     align-items: center;
 }
+
 .grid-bottom-left {
     justify-content: left;
     align-items: end;
 }
+
 .grid-bottom-center {
     justify-content: center;
     align-items: end;
 }
+
 .grid-bottom-right {
     justify-content: right;
     align-items: end;
 }
 
-.text-8 {font-size: 8pt}
-.text-9 {font-size: 9pt}
-.text-10 {font-size: 10pt}
-.text-12 {font-size: 12pt}
-.text-14 {font-size: 14pt}
-.text-16 {font-size: 16pt}
-.text-18 {font-size: 18pt}
-.text-20 {font-size: 20pt}
-.bold {font-weight: bold}
-.italic {font-style: italic}
+.text-8 {
+    font-size: 8pt
+}
 
-.align-left {text-align: left}
-.align-right {text-align: right}
-.align-center {text-align: center}
-.align-justify {text-align: justify}
+.text-9 {
+    font-size: 9pt
+}
+
+.text-10 {
+    font-size: 10pt
+}
+
+.text-12 {
+    font-size: 12pt
+}
+
+.text-14 {
+    font-size: 14pt
+}
+
+.text-16 {
+    font-size: 16pt
+}
+
+.text-18 {
+    font-size: 18pt
+}
+
+.text-20 {
+    font-size: 20pt
+}
+
+.bold {
+    font-weight: bold
+}
+
+.italic {
+    font-style: italic
+}
+
+.align-left {
+    text-align: left
+}
+
+.align-right {
+    text-align: right
+}
+
+.align-center {
+    text-align: center
+}
+
+.align-justify {
+    text-align: justify
+}
