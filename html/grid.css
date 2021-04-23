@@ -20,19 +20,23 @@ body {
     display: grid;
 }
 
+.grid {
+    display: grid;
+}
+
 .grid-top-left {
     justify-content: left;
-    align-items: top;
+    align-items: start;
 }
 
 .grid-top-center {
     justify-content: center;
-    align-items: top;
+    align-items: start;
 }
 
 .grid-top-right {
     justify-content: right;
-    align-items: top;
+    align-items: start;
 }
 
 .grid-middle-left {
