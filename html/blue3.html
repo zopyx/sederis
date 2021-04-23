@@ -16,6 +16,7 @@
                 --line-height-default: 1.2em;
                 --border-color: #001af5;
                 --icon-column-width: 25mm;
+                --column-3-small-width: 40mm;
             }
 
             @font-face {
@@ -87,13 +88,27 @@
 
             /* Containers */
 
-            .container-3 {
-                display: grid;
-                grid-template-columns: var(--icon-column-width) auto var(--icon-column-width);
-                margin-top: 7mm;            
-                margin-bottom: 10mm;            
+            section {
+                break-inside: auto;
             }
 
+            .container-3 {
+                margin-top: 7mm;            
+                margin-bottom: 10mm;            
+                display: flex;
+            }
+
+            .container-3 div.col1 {
+                width: var(--column-3-small-width);
+            }
+
+            .container-3 div.col2 {
+                width: auto;
+            }
+
+            .container-3 div.col3 {
+                width: var(--column-3-small-width);
+            }
 
             .header-box {
                 background: var(--border-color);
@@ -225,12 +240,12 @@
                 </h1>
             </div>
             <div class="container-3">
-                <div class="icon-list-vertical">
+                <div class="col1 icon-list-vertical">
                     <img src="icons/binocular.svg">               
                     <img src="icons/desktop-monitor-download.svg">
                     <img src="icons/laptop-smiley-1.svg">
                 </div>    
-                <div>
+                <div class="col2">
                     <div class="keep-together">
                         <div class="list-header">
                             Gefahren durch sich bewegende Maschinenteile
@@ -266,7 +281,8 @@
                             <li>passende Anschlagmittel auswählen und einsetzen</li>
                         </ul>
                     </div>
-
+                </div>
+                <div class="col3">
                 </div>
             </div>
         </section>
@@ -276,8 +292,8 @@
                 <h1>Schutzmassnahmen und Verhaltensregeln</h1>
             </div>
 
-            <div class="container-3" style="break-inside: auto">
-                <div>    
+            <div class="container-3">
+                <div class="col1">    
                     <div class="icon-list-vertical">
                         <img src="icons/binocular.svg">               
                         <img src="icons/desktop-monitor-download.svg">
@@ -285,7 +301,7 @@
                     </div>    
                 </div>    
 
-                <div>   
+                <div class="col2">   
                     <div class="keep-together" style="break-inside: auto">
                         <div class="list-header" style="break-inside: auto">
                             Das Bedienen der Säulenbohrmaschine ist nur für unterwiesene Fachkräfte erlaubt !
@@ -332,7 +348,7 @@
                 </div>
 
 
-                <div>
+                <div class="col3">
                     <div class="icon-list-vertical">
                         <img src="icons/binocular.svg">               
                         <img src="icons/desktop-monitor-download.svg">
@@ -347,8 +363,8 @@
                 <h1>Verhalten bei Störungen</h1>
             </div>
             <div class="container-3">
-                <div></div>
-                <div>
+                <div class="col1"></div>
+                <div class="col2">
                     Bei Störungen oder Auffäligkeiten die Maschine abschalten, sichern und den Vorgesetzen informieren
                 </div>
             </div>
@@ -360,7 +376,7 @@
             </div>
 
             <div class="container-3">
-                <div>    
+                <div class="col1">    
                     <div class="icon-list-vertical">
                         <img src="icons/binocular.svg">               
                         <img src="icons/desktop-monitor-download.svg">
@@ -368,7 +384,7 @@
                     </div>    
                 </div>    
 
-                <div>    
+                <div class="col2">    
                     <div class="keep-together">
                         <div class="list-header">Durchführung von Erste Hilfe Maßnahmen</div>
                         <ol class="standard">
@@ -384,7 +400,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="col3">
                     <div class="icon-list-vertical">
                         <img src="icons/binocular.svg">               
                         <img src="icons/desktop-monitor-download.svg">
@@ -400,10 +416,12 @@
                 <h1>Sachgerechte Entsorgung / Instandsetzung</h1>
             </div>
             <div class="container-3">
-                <div class="icon-list-vertical">
-                    <img src="icons/binocular.svg">               
+                <div class="col1">
+                    <div class="icon-list-vertical">
+                        <img src="icons/binocular.svg">               
+                    </div>
                 </div>
-                <div>
+                <div class="col2">
                     Instandhaltungsarbeiten sind nur durch geschultes und unterwiesenes Personal und keinesfalls durch den Maschinenbediener durchzuführen.
                 </div>
             </div>
