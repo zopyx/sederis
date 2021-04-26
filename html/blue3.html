@@ -5,7 +5,9 @@
         <link rel="stylesheet" type="text/css" href="grid.css">
         <style type="text/css">
 
-            :root {
+            /* don't use :root since this will not work for page areas */
+
+            * {
                 --page-width: 210mm;
                 --page-height: 297mm;
 
@@ -19,6 +21,16 @@
 
                 /* white-space between upper page and header box */
                 --page-margin-header-top: 5mm;
+
+                /*
+                   --header-height1 is the height of the header box on page 1,
+                   --header-height2 is the height of the header box on all other pages
+                   The height is measured from the top of the page into direction of
+                   the page top
+                */
+                   
+                --header-height1: 50mm;
+                --header-height2: 30mm;
 
                 /* width of border (header and page) */
                 --border-width: 5mm;
@@ -71,8 +83,8 @@
             @page:first {
                 @top-left {
                     content: element(header-first);
-                    border-top: 5mm solid red;
-                    height: 40mm;
+                    vertical-align: top;
+                    height: var(--header-height1);
                     border-top: 5mm solid #001af5;
                     border-left: 5mm solid #001af5;
                     border-right: 5mm solid #001af5;
@@ -83,10 +95,10 @@
                 @top-left {
                     content: element(header);
                     vertical-align: top;
+                    height: var(--header-height2);
                     border-top: 5mm solid #001af5;
                     border-left: 5mm solid #001af5;
                     border-right: 5mm solid #001af5;
-                    height: 30mm;
                 }
             }
 
@@ -162,18 +174,11 @@
 
             }
 
-            /*
             .header {
                 box-sizing: border-box;
                 text-align: center;
-                font-size: 1.4rem;
-                border: var(--border-width) solid #001AF5;
-                margin-top: var(--page-margin-header-top);
-                border: var(--border-width) solid red;
                 height: 100%;
-            }
-            */
-
+             }
 
             h1 {
                 text-align: center;
