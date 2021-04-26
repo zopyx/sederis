@@ -1,22 +1,33 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+
+        <link rel="stylesheet" type="text/css" href="grid.css">
         <style type="text/css">
 
             :root {
-                --text-color: black;
+                --page-width: 210mm;
+                --page-height: 297mm;
+
+                /* header boxes on first page is longer than on page 2... */
+                --page-margin-top: 50mm;
                 --page-margin-top-first-page: 60mm;
-                --page-margin-top: 40mm;
                 --page-margin-right: 15mm;
                 --page-margin-left: 15mm;
                 --page-margin-bottom: 15mm;
                 --page-margin-right: 15mm;
-                --page-border-thickness: 5mm;
+
+                /* white-space between upper page and header box */
+                --page-margin-header-top: 5mm;
+
+                /* width of border (header and page) */
+                --border-width: 5mm;
+                --text-color: black;
                 --font-size-default: 10pt;
                 --line-height-default: 1.2em;
                 --border-color: #001af5;
                 --icon-column-width: 25mm;
-                --column-3-small-width: 40mm;
+                --column-3-small-width: 30mm;
             }
 
             @font-face {
@@ -25,15 +36,15 @@
             }
 
             @page {
-                size: A4;
+                size: var(--page-width) var(--page-height);
                 margin-top: var(--page-margin-top);
                 margin-bottom: var(--page-margin-bottom);
                 margin-left: var(--page-margin-left);
                 margin-right: var(--page-margin-right);
-                border-left: var(--page-border-thickness) solid var(--border-color); 
-                border-right: var(--page-border-thickness) solid  var(--border-color);
-                border-bottom: var(--page-border-thickness) solid  var(--border-color);
-                border-top: var(--page-border-thickness) solid  var(--border-color);
+                border-left: var(--border-width) solid var(--border-color); 
+                border-right: var(--border-width) solid  var(--border-color);
+                border-bottom: var(--border-width) solid  var(--border-color);
+                border-top: var(--border-width) solid  var(--border-color);
             }
 
             @page:first {
@@ -52,11 +63,6 @@
                 position: running(header);
             }
 
-            @page {
-                @top-left {
-                    content: element(header);
-                }
-            }
 
             #header-first {
                 position: running(header-first);
@@ -65,6 +71,22 @@
             @page:first {
                 @top-left {
                     content: element(header-first);
+                    border-top: 5mm solid red;
+                    height: 40mm;
+                    border-top: 5mm solid #001af5;
+                    border-left: 5mm solid #001af5;
+                    border-right: 5mm solid #001af5;
+                }
+            }
+
+            @page {
+                @top-left {
+                    content: element(header);
+                    vertical-align: top;
+                    border-top: 5mm solid #001af5;
+                    border-left: 5mm solid #001af5;
+                    border-right: 5mm solid #001af5;
+                    height: 30mm;
                 }
             }
 
@@ -91,6 +113,7 @@
             .container-3 {
                 margin-top: 7mm;            
                 margin-bottom: 10mm;            
+                width: 100%;
                 display: flex;
             }
 
@@ -99,7 +122,7 @@
             }
 
             .container-3 div.col2 {
-                width: auto;
+                width: calc(var(--page-width) - 2 * var(--column-3-small-width));
             }
 
             .container-3 div.col3 {
@@ -129,23 +152,28 @@
 
 
             .icon-list-vertical {
-                text-align: center;
             }
 
             .icon-list-vertical img {
-                width: 16mm;
-                margin-bottom: 1em;
+                width: 15mm;        /* width of images */
+                padding-bottom: 1em;
                 display: block;     /* enable page breaks*/
+                margin: auto;       /* and center */
+
             }
 
+            /*
             .header {
+                box-sizing: border-box;
                 text-align: center;
                 font-size: 1.4rem;
-                border: 10px solid #001AF5;
-                vertical-align: top;
-                height: 44mm;
-                margin-top: 10mm;
+                border: var(--border-width) solid #001AF5;
+                margin-top: var(--page-margin-header-top);
+                border: var(--border-width) solid red;
+                height: 100%;
             }
+            */
+
 
             h1 {
                 text-align: center;
@@ -237,9 +265,11 @@
                 </h1>
             </div>
             <div class="container-3">
-                <div class="col1 icon-list-vertical">
-                    <img src="icons/binocular.svg">               
-                    <img src="icons/binocular.svg">               
+               <div class="col1">
+                    <div class="icon-list-vertical">
+                        <img src="icons/binocular.svg">               
+                        <img src="icons/binocular.svg">               
+                    </div>    
                 </div>    
                 <div class="col2">
                     <div class="keep-together">
@@ -278,8 +308,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col3">
-                </div>
+                <div class="col3">&nbsp;</div>
             </div>
         </section>
 
@@ -364,6 +393,7 @@
                 <div class="col2">
                     Bei Störungen oder Auffäligkeiten die Maschine abschalten, sichern und den Vorgesetzen informieren
                 </div>
+                <div class="col3"></div>
             </div>
         </section>
 
@@ -421,6 +451,7 @@
                 <div class="col2">
                     Instandhaltungsarbeiten sind nur durch geschultes und unterwiesenes Personal und keinesfalls durch den Maschinenbediener durchzuführen.
                 </div>
+                <div class="col3"></div>
             </div>
         </section>
     </body>
