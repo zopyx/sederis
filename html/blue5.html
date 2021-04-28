@@ -40,12 +40,31 @@
                 --border-color: #001af5;
                 --icon-column-width: 25mm;
                 --column-3-small-width: 30mm;
+
+                /* font sizes */
+                --font-size-large-1: 14pt;
+                --font-size-large-2: 16pt;
+                --font-size-large-3: 18pt;
             }
 
             @font-face {
                 font-family: Helvetica; 
                 src: url("Helvetica-Condensed.ttf");
             }
+
+
+            .font-large-1 {
+                font-size: var(--font-size-large-1);
+            }
+
+            .font-large-2 {
+                font-size: var(--font-size-large-2);
+            }
+
+            .font-large-3 {
+                font-size: var(--font-size-large-3);
+            }
+
 
             @page {
                 size: var(--page-width) var(--page-height);
@@ -82,6 +101,10 @@
                 line-height: var(--line-height-default);
             }
 
+            th {
+                color: red;
+            }
+
             /* Lists */
             ol.standard li,
             ul.standard li {
@@ -116,12 +139,18 @@
                 padding: 0;
             }
 
+            .table-3 tr {
+                height: calc(var(--border-width) + 2mm);
+            }
+
+            .table-3 span.h1 {
+                bookmark-level: 1;
+            }
+
             .table-3 th {
                 background: var(--border-color);
                 color: white;
-                height: var(--border-width); 
-                height: 10mm;
-                font-size: var(--font-size-default);
+                font-size: 10pt;
             }
 
             .table-3 td {
@@ -133,18 +162,6 @@
             .table-3 .col3 {
                 width: var(--column-3-small-width);
                 vertical-align: top;
-            }
-
-            /* Fonts */
-            .font-large {
-                font-size: 14pt;
-            }
-            .font-large-2 {
-                font-size: 16pt;
-            }
-
-            .list-header {
-                font-size: 14pt;
             }
 
             /* Icon boxes */
@@ -189,7 +206,7 @@
                 <thead>
                     <tr>
                         <th colspan="3">
-                            <h1>Anwendungsbereich</h1>
+                            <span class="h1">Anwendungsbereich</span>
                         </th>
                     </tr>
                 </thead>
@@ -209,7 +226,7 @@
                 <thead>
                     <tr>
                         <th colspan="3">
-                            <h1>Gefahren für Mensch und Umwelt</h1>
+                            <span class="h1">Gefahren für Mensch und Umwelt</span>
                         </th>
                     </tr>
                 </thead>
@@ -271,7 +288,7 @@
                 <thead>
                     <tr>
                         <th colspan="3">
-                            <h1>Schutzmassnahmen und Verhaltensregeln</h1>
+                            <span class="h1">Schutzmassnahmen und Verhaltensregeln</span>
                         </th>
                     </tr>
                 </thead>
@@ -317,7 +334,7 @@
                 <thead>
                     <tr>
                         <th colspan="3">
-                            <h1>Verhalten bei Störungen</h1>
+                            <span class="h1">Verhalten bei Störungen</span>
                         </th>
                     </tr>
                 </thead>
@@ -343,7 +360,7 @@
                 <thead>
                     <tr>
                         <th colspan="3">
-                            <h1>Verhalten bei Unfällen, Erste Hilfe</h1>
+                            <span class="h1">Verhalten bei Unfällen, Erste Hilfe</span>
                         </th>
                     </tr>
                 </thead>
@@ -388,7 +405,7 @@
                 <thead>
                     <tr>
                         <th colspan="3">
-                            <h1>Sachgerechte Entsorgung / Instandsetzung</h1>
+                            <span class="h1">Sachgerechte Entsorgung / Instandsetzung</span>
                         </th>
                     </tr>
                 </thead>
