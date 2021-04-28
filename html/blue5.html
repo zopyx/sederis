@@ -12,8 +12,8 @@
                 --page-height: 297mm;
 
                 /* header boxes on first page is longer than on page 2... */
-                --page-margin-top: 70mm;
-                --page-margin-top-first-page: 60mm;
+                --page-margin-top: 40mm;
+                --page-margin-top-first-page: 50mm;
                 --page-margin-right: 15mm;
                 --page-margin-left: 15mm;
                 --page-margin-bottom: 15mm;
@@ -56,19 +56,23 @@
                 border-left: var(--border-width) solid var(--border-color); 
                 border-right: var(--border-width) solid  var(--border-color);
                 border-bottom: var(--border-width) solid  var(--border-color);
-                border-top: var(--border-width) solid  var(--border-color);
+                padding: 0;
             }
 
 
             @page:first {
+                margin-top: var(--page-margin-top-first-page);
+
                 @top-left {
                     content: xhtml(url("header.html"));
+                    vertical-align: top;
                }
             }
 
             @page {
                 @top-left {
                     content: xhtml(url("header2.html"));
+                    vertical-align: top;
                }
             }
 
@@ -97,12 +101,32 @@
 
             /* 3 column content tables */
             .table-3 {
+                margin: 0;
+                padding: 0;
+                left: -3px;
+                width: 102%;
+                position: relative;
+            }
+
+            /* Table reset */
+            .table-3 tr,
+            .table-3 td,
+            .table-3 th {
+                margin: 0;
+                padding: 0;
             }
 
             .table-3 th {
                 background: var(--border-color);
                 color: white;
                 height: var(--border-width); 
+                height: 10mm;
+                font-size: var(--font-size-default);
+            }
+
+            .table-3 td {
+                padding-top: 5mm;
+                padding-bottom: 5mm;
             }
 
             .table-3 .col1,
@@ -159,6 +183,26 @@
             <span class="metadata" id="md-head7"> Tätigkeitsbereich: Zerspanung</span>g
             <span class="metadata" id="md-head8"> Beschäftigtenbereich: Zerspanungstechniker</span>
         </div>
+
+        <section>
+            <table class="table-3">
+                <thead>
+                    <tr>
+                        <th colspan="3">
+                            <h1>Anwendungsbereich</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col1" colspan="3">
+                            Diese Betriebsanleitung gilt für das Arbeiten mit der Gillardon Säulenbohrmaschine
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </section>
 
         <section>
             <table class="table-3">
@@ -246,31 +290,7 @@
                                     Das Bedienen der Säulenbohrmaschine ist nur für unterwiesene Fachkräfte erlaubt !
                                 </div>
                                 <ul class="standard">
-                                    <li>Arbeiten sie niemals mit Schadhaften Maschinen oder Werkzeugen.</li>
-                                    <li>Führen sie Kontrollmessungen an aufgespannten Werkstücken nur an der stehenden Maschine durch.</li>
-                                    <li>Entfernen sie Späne nur mit geeigneten Hilfsmitteln, z.B Spänehaken.</li>
-                                    <li>Überzeugen sie sich vor Arbeitsbeginn von der Einwandfreien Funktion aller Sicherheitseinrichtungen</li>
-                                    <li>Halten sie Ordnung am Arbeitsplatz (Maschinen sind keine Werkzeugablagen)</li>
-                                    <li>Beseitigen sie Stolper und Rutschgefahren (z.B herumliegende Gegenstände oder Öl) stets sofort.</li>
-                                    <li>Tragen sie bei der Arbeit an der Maschine eng anliegende Kleidung, Haarschutz bei langen Haaren.</li>
-                                    <li>Tragen sie eine Schutzbrille gegen den Späneflug und eventuell herumspritzende Kühlschmierstoffe.</li>
-                                    <li>Tragen sie bei der Arbeit an der Maschine weder Armbanduhr noch Ringe, Ketten oder sonstigen Schmuck.</li>
-                                    <li>Das Entfernen von Schutzeinrichtungen oder das Manipulieren an Schaltern und Schlössern ist strengstens verboten.</li>
-                                    <li>Beachten sie den Hautschutzplan aufgrund des Kontakts mit Kühlschmierstoffen und anderen Stoffen.</li>
-                                    <li>Keine Nahrungsmittel und Getränke im Arbeitsbereich aufbewahren.</li>
-                                    <li>Arbeiten sie niemals mit Schadhaften Maschinen oder Werkzeugen.</li>
-                                    <li>Führen sie Kontrollmessungen an aufgespannten Werkstücken nur an der stehenden Maschine durch.</li>
-                                    <li>Entfernen sie Späne nur mit geeigneten Hilfsmitteln, z.B Spänehaken.</li>
-                                    <li>Überzeugen sie sich vor Arbeitsbeginn von der Einwandfreien Funktion aller Sicherheitseinrichtungen</li>
-                                    <li>Halten sie Ordnung am Arbeitsplatz (Maschinen sind keine Werkzeugablagen)</li>
-                                    <li>Beseitigen sie Stolper und Rutschgefahren (z.B herumliegende Gegenstände oder Öl) stets sofort.</li>
-                                    <li>Tragen sie bei der Arbeit an der Maschine eng anliegende Kleidung, Haarschutz bei langen Haaren.</li>
-                                    <li>Tragen sie eine Schutzbrille gegen den Späneflug und eventuell herumspritzende Kühlschmierstoffe.</li>
-                                    <li>Tragen sie bei der Arbeit an der Maschine weder Armbanduhr noch Ringe, Ketten oder sonstigen Schmuck.</li>
-                                    <li>Das Entfernen von Schutzeinrichtungen oder das Manipulieren an Schaltern und Schlössern ist strengstens verboten.</li>
-                                    <li>Beachten sie den Hautschutzplan aufgrund des Kontakts mit Kühlschmierstoffen und anderen Stoffen.</li>
-                                    <li>Keine Nahrungsmittel und Getränke im Arbeitsbereich aufbewahren.</li>
-                                    <li>Arbeiten sie niemals mit Schadhaften Maschinen oder Werkzeugen.</li>
+                                    <li>Arbeiten sie niemals mit schadhaften Maschinen oder Werkzeugen.</li>
                                     <li>Führen sie Kontrollmessungen an aufgespannten Werkstücken nur an der stehenden Maschine durch.</li>
                                     <li>Entfernen sie Späne nur mit geeigneten Hilfsmitteln, z.B Spänehaken.</li>
                                     <li>Überzeugen sie sich vor Arbeitsbeginn von der Einwandfreien Funktion aller Sicherheitseinrichtungen</li>
