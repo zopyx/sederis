@@ -78,6 +78,7 @@
                 line-height: var(--line-height-default);
             }
 
+            /* Lists */
             ol.standard li,
             ul.standard li {
                 margin: 0;
@@ -94,10 +95,6 @@
 
             /* Containers */
 
-            section {
-                break-inside: auto;
-            }
-
             /* 3 column content tables */
             .table-3 {
             }
@@ -110,7 +107,7 @@
 
             .table-3 .col1,
             .table-3 .col3 {
-                width: 25mm;
+                width: var(--column-3-small-width);
                 vertical-align: top;
             }
 
@@ -126,7 +123,7 @@
                 font-size: 14pt;
             }
 
-
+            /* Icon boxes */
             .icon-list-vertical {
             }
 
@@ -136,35 +133,6 @@
                 display: block;     /* enable page breaks*/
                 margin: auto;       /* and center */
 
-            }
-
-            .header {
-                box-sizing: border-box;
-                text-align: center;
-                height: 100%;
-             }
-
-            h1 {
-                text-align: center;
-                display: block;
-                width: 100%;
-                font-size: 10pt;
-                margin-bottom: 1em;
-                string-set: h1-text content(text);
-            }
-
-
-            .header-title {
-                font-size: 20pt;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .header-title2 {
-                font-size: 16pt;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
 
 
@@ -177,13 +145,11 @@
             #md-head7 {string-set: md-head7 content(text)}
             #md-head8 {string-set: md-head8 content(text)}
 
-            span.metadata {
-            }
         </style>
     </head>
     <body>
 
-        <div style="font-size: 0em">
+        <div style="font-size: 0em; height: 0">
             <span class="metadata" id="md-head1"> Nummer:</span>
             <span class="metadata" id="md-head2"> Datum: 11.11.2011</span>
             <span class="metadata" id="md-head3"> Betriebsanweisung</span>
