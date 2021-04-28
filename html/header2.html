@@ -8,27 +8,53 @@
     #target-head7:after {content: string(md-head7) }
     #target-head8:after {content: string(md-head8) }
 
-    #target-h1-text:after {
-        content: string(h1-text);        
-        font-size: 2em;
-        font-weight: bold;
-        color: pink;
+    #header-page-all {
+        top: var(--page-margin-header-top);
+        height: var(--header-height2);
+        border:  var(--border-width) solid var(--border-color);
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .header {
-        top: var(--page-margin-header-top);
-        height: var(--header-height1);
-        position: absolute;
-        border:  var(--border-width) solid var(--border-color);
-        width: 100%;
+    #header-page-all {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 5mm auto auto;
+        font-size: 8pt;
     }
+
+    .grid-span-2 {
+        grid-column: 1 / 3;
+    }
+
+
+    #header-page-all div {
+        border: 1px solid green;
+    }
+
+    #target-head3 {
+        text-align: center;
+        font-size: 20pt;
+    }
+
+    #target-head4 {
+        text-align: center;
+        font-size: 16pt;
+    }
+
+    #target-head2 {
+        text-align: right;
+    }
+
+
 </style>
 
-<div class="header">
-    <div id="target-head1">1</div>
-    <div id="target-head2">2</div>
-    <div id="target-head3">3</div>
-    <div id="target-head4">4</div>
+<div id="header-page-all">
+    <div id="target-head1"></div>
+    <div id="target-head2"></div>
 
-    <div id="target-h1-text">H1</div>
+    <div class="grid-span-2" id="target-head3"></div>
+    <div class="grid-span-2" id="target-head4"></div>
+
 </div>
