@@ -27,10 +27,11 @@
                    --header-height2 is the height of the header box on all other pages
                    The height is measured from the top of the page into direction of
                    the page top
+                   page-margin-header-top + 2*border-width + header-heightX = page-margin-top 
                 */
-                   
-                --header-height1: 40mm;
-                --header-height2: 30mm;
+
+                --header-height1: calc(var(--page-margin-top-first-page) - var(--page-margin-header-top));
+                --header-height2: calc(var(--page-margin-top) - var(--page-margin-header-top));
 
                 /* width of border (header and page) */
                 --border-width: 5mm;
@@ -45,6 +46,9 @@
                 --font-size-large-1: 14pt;
                 --font-size-large-2: 16pt;
                 --font-size-large-3: 18pt;
+
+                --table-vertical-padding: 5mm;
+                --image-width: 15mm;
             }
 
             @font-face {
@@ -154,8 +158,8 @@
             }
 
             .table-3 td {
-                padding-top: 5mm;
-                padding-bottom: 5mm;
+                padding-top: var(--table-vertical-padding);
+                padding-bottom: var(--table-vertical-padding);
             }
 
             .table-3 .col1,
@@ -169,7 +173,7 @@
             }
 
             .icon-list-vertical img {
-                width: 15mm;        /* width of images */
+                width: var(--image-width);
                 padding-bottom: 1em;
                 display: block;     /* enable page breaks*/
                 margin: auto;       /* and center */
