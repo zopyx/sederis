@@ -3,6 +3,7 @@
         <meta charset="UTF-8" />
 
         <link rel="stylesheet" type="text/css" href="grid.css">
+        <script type="text/javascript" src="code.js"></script>
         <style type="text/css">
 
             /* don't use :root since this will not work for page areas */
@@ -36,7 +37,7 @@
                 /* width of border (header and page) */
                 --border-width: 5mm;
                 --text-color: black;
-                --font-size-default: 10pt;
+                --font-size-default: 14pt;
                 --line-height-default: 1.2em;
                 --border-color: #001af5;
                 --icon-column-width: 25mm;
@@ -99,19 +100,20 @@
 
             body {
                 font-family: Helvetica;
+                font-size: var(--font-size-default);
                 color: var(--text-color);
                 line-height: var(--line-height-default);
             }
 
             /* Lists */
-            ol.standard li,
-            ul.standard li {
+            ol.standard autofit li,
+            ul.standard autofit li {
                 margin: 0;
                 padding: 0;
             }
 
-            ol.standard li,
-            ul.standard li {
+            ol.standard autofit li,
+            ul.standard autofit li {
                 margin: 0;
                 padding: 0;
                 margin-left: -1.5em;
@@ -148,7 +150,6 @@
             .table-3 th {
                 background: var(--border-color);
                 color: white;
-                font-size: 10pt;
             }
 
             .table-3 td {
@@ -190,8 +191,10 @@
             }
 
         </style>
+
+        <link rel="stylesheet" type="text/css" href="blue5-vars.css">
     </head>
-    <body>
+    <body onload="fixes()">
 
         <div style="font-size: 0em; height: 0">
             <span class="metadata" id="md-head1"> Nummer:</span>
@@ -246,7 +249,7 @@
                                 <div class="list-header">
                                     Gefahren durch sich bewegende Maschinenteile
                                 </div>
-                                <ul class="standard">
+                                <ul class="standard autofit">
                                     <li>Gefahr vom rotierenden Bohrer eingezogen zu werden</li>
                                 </ul>
                             </div>
@@ -254,7 +257,7 @@
                                 <div class="list-header">
                                     Vorsicht vor herumfliegenden Teilen, Werkstücken, Spänen oder Flüssigkeiten
                                 </div>
-                                <ul class="standard">
+                                <ul class="standard autofit">
                                     <li>Durch diese Gefahr können schwere Verletzungen entstehen.</li>
                                     <li>Die Vorhandenen Schutzeinrichtungen sind nicht zu entfernen und die manuellen Schutzeinrichtungen sind nach dem aufspannen des Werkstückes wieder anzubringen.  </li>
                                 </ul>
@@ -263,7 +266,7 @@
                                 <div class="list-header">
                                     Vorsicht vor erhitzten Teilen am Werkstück
                                 </div>
-                                <ul class="standard">
+                                <ul class="standard autofit">
                                     <li>Entnahme der Werkstücke nur mit Schutzhandschuhen (nur bei stehender Maschine)</li>
                                     <li>Durch die Bearbeitung können sich Werkstücke stark erhitzen und es besteht Verbrennungsgefahr.</li>
                                 </ul>
@@ -272,7 +275,7 @@
                                 <div class="list-header">
                                     Vorsicht bei Aufspannarbeiten mit dem Kran
                                 </div>
-                                <ul class="standard">
+                                <ul class="standard autofit">
                                     <li>Beim auf und abspannen von Werkstücken den Kran immer direkt aus dem Gefahrenbereich fahren.</li>
                                     <li>passende Anschlagmittel auswählen und einsetzen</li>
                                 </ul>
@@ -309,7 +312,7 @@
                                 <div class="list-header">
                                     Das Bedienen der Säulenbohrmaschine ist nur für unterwiesene Fachkräfte erlaubt !
                                 </div>
-                                <ul class="standard">
+                                <ul class="standard autofit">
                                     <li>Arbeiten sie niemals mit schadhaften Maschinen oder Werkzeugen.</li>
                                     <li>Führen sie Kontrollmessungen an aufgespannten Werkstücken nur an der stehenden Maschine durch.</li>
                                     <li>Entfernen sie Späne nur mit geeigneten Hilfsmitteln, z.B Spänehaken.</li>
@@ -373,7 +376,7 @@
                         <td class="col2">
                             <div class="keep-together">
                                 <div class="list-header">Durchführung von Erste Hilfe Maßnahmen</div>
-                                <ol class="standard">
+                                <ol class="standard autofit">
                                    <li>Selbstschutz beachten</li>
                                    <li>Verletzte bergen </li>
                                    <li>Verbrennungen kühlen, verletzte Gliedmaßen ruhigstellen</li>
